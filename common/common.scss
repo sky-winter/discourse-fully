@@ -204,6 +204,14 @@ $btn-hover: light-dark($btn-hover-light, $btn-hover-dark);
   color: var(--tertiary-hover);
 }
 
+// 弹窗底部按钮区域：去掉分隔横线，与上方内容的间距为 16px（正文自带 16px 下内边距）
+// gap 归零，按钮间距由按钮的 margin 控制（16px）
+.d-modal__footer {
+  border-top: none;
+  padding-top: 0;
+  gap: 0;
+}
+
 // 弹窗打开时链接会被自动聚焦出现焦点框，这里整体去掉（:focus 与 :focus-visible 都覆盖）
 .d-modal .personal-info-link:focus,
 .d-modal .personal-info-link:focus-visible {
