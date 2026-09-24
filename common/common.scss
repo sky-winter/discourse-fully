@@ -174,3 +174,39 @@ $btn-hover: light-dark($btn-hover-light, $btn-hover-dark);
     transform: translateY(-50%);
   }
 }
+
+// 个人信息弹窗按钮：空心样式，文字/边框使用主题色
+.d-modal .personal-info-btn,
+.d-modal .personal-info-btn .d-button-label {
+  color: var(--tertiary);
+}
+
+.d-modal .personal-info-btn {
+  background: transparent;
+  border: 1px solid var(--tertiary);
+  padding: 4px 16px;
+
+  // 两个按钮间距 16px
+  + .personal-info-btn {
+    margin-inline-start: 16px;
+  }
+
+  &:hover,
+  &:focus {
+    background: transparent;
+    border-color: var(--tertiary-hover);
+    color: var(--tertiary-hover);
+  }
+}
+
+.d-modal .personal-info-btn:hover .d-button-label,
+.d-modal .personal-info-btn:focus .d-button-label {
+  color: var(--tertiary-hover);
+}
+
+// 弹窗打开时链接会被自动聚焦出现焦点框，这里整体去掉（:focus 与 :focus-visible 都覆盖）
+.d-modal .personal-info-link:focus,
+.d-modal .personal-info-link:focus-visible {
+  outline: none !important;
+  box-shadow: none !important;
+}
